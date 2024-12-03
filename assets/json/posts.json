@@ -20,6 +20,12 @@
                 "user": "Jane Smith",
                 "text": "Great post!",
                 "timestamp": "2024-12-03T10:00:00Z"
+            },
+            {
+                "id": 101,
+                "user": "Lara Croft",
+                "text": "Nice view",
+                "timestamp": "2024-12-03T10:00:00Z"
             }
         ],
         "timestamp": "2024-12-02T15:30:00Z"
@@ -39,7 +45,20 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
+        "comments": [
+            {
+                "id": 101,
+                "user": "Jane Karl",
+                "text": "Hope to see you next week :) ",
+                "timestamp": "2024-12-03T10:00:00Z"
+            },
+            {
+                "id": 101,
+                "user": "Marta Hopper",
+                "text": "Send the adress please",
+                "timestamp": "2024-12-03T10:00:00Z"
+            }
+        ],
         "timestamp": "2024-12-02T18:45:00Z"
     },
     {
@@ -75,7 +94,20 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
+        "comments": [
+            {
+                "id": 101,
+                "user": "Mickael Jordan",
+                "text": "why you never send invitation to travel?",
+                "timestamp": "2024-12-03T10:00:00Z"
+            },
+            {
+                "id": 101,
+                "user": "Bob Dylan",
+                "text": "You are blocked",
+                "timestamp": "2024-12-03T10:00:00Z"
+            }
+        ],
         "timestamp": "2024-12-02T18:45:00Z"
     },
     {

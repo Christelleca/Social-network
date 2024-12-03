@@ -1,4 +1,6 @@
 /****** GENERAL ******/
+/* Apply a consistent font, remove default margins and paddings, 
+   and use box-sizing for better control of element sizing. */
 * {
     font-family: 'Poppins', serif;
     margin: 0;
@@ -9,33 +11,40 @@
     list-style: none;
 }
 
+/* Set the body background color to a darker shade for contrast. */
+body {
+    background: var(--primary-shadow-dark);
+}
+
 /******* COLORS *******/
+/* Define a color palette using CSS variables for easier maintenance. */
 :root {
-    /* Primary Colors */
-    --primary-bg: #e0e0e0; /* Neutral background */
-    --primary-shadow-light: #ffffff; /* Light shadow */
-    --primary-shadow-dark: #bebebe; /* Dark shadow */
+    /* Neutral background colors for the neumorphic effect. */
+    --primary-bg: #e0e0e0;
+    --primary-shadow-light: #ffffff;
+    --primary-shadow-dark: #d0d0d0;
 
-    /* Text Colors */
-    --text-primary: #333333; /* Main text */
-    --text-secondary: #555555; /* Secondary text */
-    --text-placeholder: #888888; /* Placeholder or muted text */
+    /* Text colors for readability and emphasis. */
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-placeholder: #888888;
 
-    /* Accent Colors */
-    --accent-like: #4682b4; /* Like button color */
-    --accent-love: #ffb6c1; /* Love reaction color */
-    --accent-dislike: #ff0000; /* Dislike button color */
+    /* Accent colors for interactive elements. */
+    --accent-like: #4682b4;
+    --accent-love: #ffb6c1;
+    --accent-dislike: #ff0000;
 
-    /* Button Colors */
-    --button-bg: #d6d6d6; /* Button background */
-    --button-hover: #c4c4c4; /* Button background on hover */
+    /* Button colors for default and hover states. */
+    --button-bg: #d6d6d6;
+    --button-hover: #c4c4c4;
 
-    /* Additional Backgrounds */
-    --bg-light: #f5f5f5; /* Light section background */
-    --bg-dark: #d3d3d3; /* Slightly darker section background */
+    /* Additional background shades for sections. */
+    --bg-light: #f5f5f5;
+    --bg-dark: #d3d3d3;
 }
 
 /******* HEADER *******/
+/* Style the navbar for a clean and functional layout. */
 .navbar {
     display: flex;
     align-items: center;
@@ -44,21 +53,26 @@
     background: var(--primary-bg);
 }
 
+/* Add neumorphic styling to the search bar. */
 .search-bar {
-    border-radius: 12px;
+    border-radius: 5px;
     box-shadow: 8px 8px 16px var(--primary-shadow-dark),
         -8px -8px 16px var(--primary-shadow-light);
 }
 
+/* Make the search icon clickable. */
 .search-bar i {
     cursor: pointer;
 }
 
+/* Style the input field for better usability. */
 .search-bar input {
     border: 3px solid var(--primary-shadow-light);
     border-radius: 5px;
+    height: 40px;
 }
 
+/* Profile picture styling for rounded and shadowed appearance. */
 .profile-picture__user {
     cursor: pointer;
     padding: 5px;
@@ -67,6 +81,7 @@
     border-radius: 50%;
 }
 
+/* Ensure profile images fit well within their container. */
 .profile-picture__user img {
     display: flex;
     object-fit: cover;
@@ -76,32 +91,34 @@
 }
 
 /*********** MAIN ***********/
+/* Center the main content area. */
 main {
     display: flex;
     justify-content: center;
 }
 
+/* Restrict the feed's maximum width for better readability. */
 #feed {
     max-width: 1024px;
-}
-
-/* General styles for posts */
-.post {
-    background-color: var(--primary-bg);
-    border-radius: 12px;
-    box-shadow: 8px 8px 16px var(--primary-shadow-dark),
-        -8px -8px 16px var(--primary-shadow-light);
-    padding: 20px;
     margin: 20px 0;
 }
 
-/* Header styling (profile picture and name) */
-.post-header {
+/* Use flexbox for a clean layout in the feed container. */
+.feed-container {
     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Neumorphic styling for individual posts. */
+.post {
+    background: var(--primary-shadow-light);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px var(--primary-shadow-light);
+}
+
+/* Profile picture within posts, consistent with global styles. */
 .profile-picture {
     cursor: pointer;
     width: 60px;
@@ -113,13 +130,13 @@ main {
         -8px -8px 16px var(--primary-shadow-light);
 }
 
-/* Content styling (text and images) */
+/* Ensure proper spacing for post text. */
 .post-content p {
     font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
+/* Add shadows to post images for depth. */
 .post-content img {
     width: 100%;
     border-radius: 10px;
@@ -128,45 +145,128 @@ main {
         -4px -4px 8px var(--primary-shadow-light);
 }
 
-/* Reaction buttons */
-.post-reactions {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.post-reactions button {
-    background-color: var(--primary-bg);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px var(--primary-shadow-dark),
-        -4px -4px 8px var(--primary-shadow-light);
-    padding: 10px 20px;
-    cursor: pointer;
-    color: var(--text-color);
-    font-size: 14px;
+/* Header layout for posts, aligning items properly. */
+.post-header {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin: 0 10px;
+    gap: 10px;
 }
 
+/* Rounded buttons with neumorphic shadows. */
+.post-reactions button,
+.comment-form button {
+    background: var(--primary-shadow-light);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px var(--primary-shadow-light);
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Inset shadow effect on hover for buttons. */
 .post-reactions button:hover {
-    box-shadow: inset 4px 4px 8px var(--primary-shadow-dark),
-        inset -4px -4px 8px var(--primary-shadow-light);
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px var(--primary-shadow-light);
+}
+
+/* Styling for the comments section. */
+.comments-list {
+    margin: 10px 0;
+}
+
+/* Style input fields with neumorphic design. */
+.comment-form input {
+    border: 3px solid var(--primary-shadow-light);
+    height: 40px;
+    background: var(--primary-shadow-light);
+    border-radius: 50px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px var(--primary-shadow-light);
+    padding: 10px 20px;
+}
+
+/* Styling for confetti animation container. */
+.dust-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+}
+
+/* Individual confetti particles. */
+.dust {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: dust-fly 0.6s ease-out forwards;
+}
+
+/* Keyframes for confetti animation. */
+@keyframes dust-fly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Button active */
+.like-button.active {
+    background-color: #bbe6f1;
+}
+
+.dislike-button.active {
+    background-color: #f89999;
+}
+
+.love-button.active {
+    background-color: #f7c9df;
+}
+
+/* Lightbox styling for full-screen image previews. */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Close button in the lightbox. */
+.close-lightbox {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: var(--primary-shadow-light);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
 }
 
 /******* FOOTER ********/
-
+/* Footer styling for a simple, centered layout. */
 .footer {
     background-color: var(--primary-bg);
     padding: 20px;
     text-align: center;
-    box-shadow: inset 4px 4px 8px var(--primary-shadow-dark),
+    box-shadow: inset 4px 4px 8px var(--primary-bg),
         inset -4px -4px 8px var(--primary-shadow-light);
     margin-top: 20px;
 }
 
+/* Footer content alignment and font size. */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -174,10 +274,7 @@ main {
     font-size: 14px;
 }
 
-.footer-nav {
-    margin-top: 10px;
-}
-
+/* Footer navigation links with hover effects. */
 .footer-nav a {
     color: var(--text-primary);
     text-decoration: none;

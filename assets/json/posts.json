@@ -1,0 +1,153 @@
+[
+    {
+        "id": 1,
+        "user": {
+            "name": "Marc Thomas",
+            "profilePicture": "assets/images/profiles/profile-picture-1.jpg"
+        },
+        "content": {
+            "text": "best mountain hike!",
+            "image": "assets/images/posts/981_6511-651651-44.jpg"
+        },
+        "reactions": {
+            "like": 0,
+            "dislike": 0,
+            "love": 0
+        },
+        "comments": [
+            {
+                "id": 101,
+                "user": "Jane Smith",
+                "text": "Great post!",
+                "timestamp": "2024-12-03T10:00:00Z"
+            }
+        ],
+        "timestamp": "2024-12-02T15:30:00Z"
+    },
+    {
+        "id": 2,
+        "user": {
+            "name": "Alice Blue",
+            "profilePicture": "assets/images/profiles/profile-picture-2.jpg"
+        },
+        "content": {
+            "text": "Very happy to walk here",
+            "image": "assets/images/posts/655646-65465bds.jpg"
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 3,
+        "user": {
+            "name": "Mike Roger",
+            "profilePicture": "assets/images/profiles/profile-picture-3.jpg"
+        },
+        "content": {
+            "text": "Good morning everyone! ☀️ Starting my day with a strong coffee and positive vibes. How's your day going?",
+            "image": null
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 4,
+        "user": {
+            "name": "Alex Johnson",
+            "profilePicture": "assets/images/profiles/profile-picture-4.jpg"
+        },
+        "content": {
+            "text": "Check out this awesome picture!",
+            "image": "assets/images/posts/IMG_20190508_152042-1-01-1.jpg"
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 5,
+        "user": {
+            "name": "Sarah Lee",
+            "profilePicture": "assets/images/profiles/profile-picture-5.jpg"
+        },
+        "content": {
+            "text": "Excited for the weekend! Planning a hiking trip with friends. Any recommendations for scenic spots nearby?",
+            "image": null
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 6,
+        "user": {
+            "name": "Martin Green",
+            "profilePicture": "assets/images/profiles/profile-picture-6.jpg"
+        },
+        "content": {
+            "text": "Grateful for small wins today. Sometimes it’s the little things that make the biggest difference. 😊",
+            "image": null
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 7,
+        "user": {
+            "name": "Gabriel Spencer",
+            "profilePicture": "assets/images/profiles/profile-picture-7.jpg"
+        },
+        "content": {
+            "text": "I hope i can stay here!",
+            "image": "assets/images/posts/fotolia_90409266_subscription_monthly_m.webp"
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    },
+    {
+        "id": 8,
+        "user": {
+            "name": "Martine Mayer",
+            "profilePicture": "assets/images/profiles/profile-picture-8.jpg"
+        },
+        "content": {
+            "text": "I’m hooked on 'The Midnight Library' by Matt Haig. Highly recommend!",
+            "image": null
+        },
+        "reactions": {
+            "like": 10,
+            "dislike": 2,
+            "love": 5
+        },
+        "comments": [],
+        "timestamp": "2024-12-02T18:45:00Z"
+    }
+]

@@ -1,0 +1,112 @@
+/****** GENERAL ******/
+* {
+    font-family: 'Poppins', serif;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/******* COLORS *******/
+:root {
+    /* Primary Colors */
+    --primary-bg: #e0e0e0; /* Neutral background */
+    --primary-shadow-light: #ffffff; /* Light shadow */
+    --primary-shadow-dark: #bebebe; /* Dark shadow */
+
+    /* Text Colors */
+    --text-primary: #333333; /* Main text */
+    --text-secondary: #555555; /* Secondary text */
+    --text-placeholder: #888888; /* Placeholder or muted text */
+
+    /* Accent Colors */
+    --accent-like: #4682b4; /* Like button color */
+    --accent-love: #ffb6c1; /* Love reaction color */
+    --accent-dislike: #ff0000; /* Dislike button color */
+
+    /* Button Colors */
+    --button-bg: #d6d6d6; /* Button background */
+    --button-hover: #c4c4c4; /* Button background on hover */
+
+    /* Additional Backgrounds */
+    --bg-light: #f5f5f5; /* Light section background */
+    --bg-dark: #d3d3d3; /* Slightly darker section background */
+}
+
+/******* HEADER *******/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background: var(--primary-bg);
+}
+
+.search-bar {
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px var(--primary-shadow-dark),
+        -8px -8px 16px var(--primary-shadow-light);
+}
+
+.search-bar i {
+    cursor: pointer;
+}
+
+.search-bar input {
+    border: 3px solid var(--primary-shadow-light);
+    border-radius: 5px;
+}
+
+.profile-picture {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px var(--primary-shadow-dark),
+        -8px -8px 16px var(--primary-shadow-light);
+    border-radius: 50%;
+}
+
+.profile-picture img {
+    display: flex;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/******* FOOTER ********/
+
+.footer {
+    background-color: var(--primary-bg);
+    padding: 20px;
+    text-align: center;
+    box-shadow: inset 4px 4px 8px var(--primary-shadow-dark),
+        inset -4px -4px 8px var(--primary-shadow-light);
+    border-radius: 12px 12px 0 0;
+    margin-top: 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-like);
+}

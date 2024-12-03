@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 10px 15px;
     background: var(--primary-bg);
 }
 
@@ -59,21 +59,101 @@
     border-radius: 5px;
 }
 
-.profile-picture {
+.profile-picture__user {
     cursor: pointer;
     padding: 5px;
-    border-radius: 12px;
     box-shadow: 8px 8px 16px var(--primary-shadow-dark),
         -8px -8px 16px var(--primary-shadow-light);
     border-radius: 50%;
 }
 
-.profile-picture img {
+.profile-picture__user img {
     display: flex;
     object-fit: cover;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+/*********** MAIN ***********/
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#feed {
+    max-width: 1024px;
+}
+
+/* General styles for posts */
+.post {
+    background-color: var(--primary-bg);
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px var(--primary-shadow-dark),
+        -8px -8px 16px var(--primary-shadow-light);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Header styling (profile picture and name) */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 8px 8px 16px var(--primary-shadow-dark),
+        -8px -8px 16px var(--primary-shadow-light);
+}
+
+/* Content styling (text and images) */
+.post-content p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.post-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 4px 4px 8px var(--primary-shadow-dark),
+        -4px -4px 8px var(--primary-shadow-light);
+}
+
+/* Reaction buttons */
+.post-reactions {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.post-reactions button {
+    background-color: var(--primary-bg);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px var(--primary-shadow-dark),
+        -4px -4px 8px var(--primary-shadow-light);
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px;
+}
+
+.post-reactions button:hover {
+    box-shadow: inset 4px 4px 8px var(--primary-shadow-dark),
+        inset -4px -4px 8px var(--primary-shadow-light);
 }
 
 /******* FOOTER ********/
@@ -84,7 +164,6 @@
     text-align: center;
     box-shadow: inset 4px 4px 8px var(--primary-shadow-dark),
         inset -4px -4px 8px var(--primary-shadow-light);
-    border-radius: 12px 12px 0 0;
     margin-top: 20px;
 }
 

@@ -11,6 +11,10 @@
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Set the body background color to a darker shade for contrast. */
 body {
     background: var(--primary-shadow-dark);
@@ -51,6 +55,10 @@ body {
     justify-content: space-between;
     padding: 10px 15px;
     background: var(--primary-bg);
+}
+
+.log {
+    color: black;
 }
 
 /* Add neumorphic styling to the search bar. */
@@ -253,6 +261,72 @@ main {
     cursor: pointer;
     width: 45px;
     height: 45px;
+}
+
+/* Global sidebar styling */
+.sidebar {
+    width: 250px;
+    height: 210px;
+    background-color: #f0f0f3;
+    box-shadow: inset -5px -5px 10px #ffffff,
+        inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 10px 0 20px;
+}
+
+/* Sidebar title styling */
+.sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* Buttons container */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual button styling */
+.sidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #e0e0e0;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 190px;
+}
+
+/* Button hover effect */
+.sidebar-button:hover {
+    background-color: #d4d4d4;
+    box-shadow: -3px -3px 6px #ffffff, 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Button active effect */
+.sidebar-button:active {
+    box-shadow: inset -3px -3px 6px #ffffff,
+        inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.sidebar-button i {
+    font-size: 1.5rem;
+}
+
+/* Text styling */
+.sidebar-button span {
+    font-size: 1rem;
 }
 
 /******* FOOTER ********/

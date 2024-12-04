@@ -13,7 +13,7 @@
         />
 
         <!---- STYLESHEET ---->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
 
         <!---- REMIXICON ---->
         <link
@@ -25,7 +25,7 @@
         <!---- FAVICON ---->
         <link
             rel="shortcut icon"
-            href="assets/images/favicon/favicon.ico"
+            href="../assets/images/favicon/favicon.ico"
             type="image/x-icon"
         />
 
@@ -36,14 +36,16 @@
         <header>
             <nav>
                 <div class="navbar">
-                    <h2 class="log">My Social-network</h2>
+                    <a href="../index.html">
+                        <h2 class="log">My Social-network</h2></a
+                    >
                     <div class="search-bar">
                         <i class="ri-search-line"></i>
                         <input type="search" placeholder="Seach Friends" />
                     </div>
                     <div class="profile-picture__user">
                         <img
-                            src="assets/images/profile_user/01.jpg"
+                            src="../assets/images/profile_user/01.jpg"
                             alt="picture of the user"
                         />
                     </div>
@@ -52,31 +54,7 @@
         </header>
 
         <!---- MAIN ---->
-        <main>
-            <section id="feed" class="feed-container"></section>
-            <!-- Sidebar Section -->
-            <section class="sidebar">
-                <h2 class="sidebar-title">Navigation</h2>
-                <div class="sidebar-buttons">
-                    <!-- Friends List Button -->
-                    <a href="pages/friends.html"
-                        ><button class="sidebar-button">
-                            <i class="ri-group-fill"></i>
-                            <span>Friends</span>
-                        </button></a
-                    >
-
-                    <!-- Messaging Button -->
-                    <a href="pages/messages.html"
-                        ><button class="sidebar-button">
-                            <i class="ri-chat-1-line"></i>
-                            <span>Messages</span>
-                        </button></a
-                    >
-                </div>
-            </section>
-        </main>
-
+        <main></main>
         <!---- FOOTER ---->
 
         <footer class="footer">
@@ -91,6 +69,6 @@
         </footer>
 
         <!---- JAVASCRIPT ---->
-        <script src="js/script.js"></script>
+        <script src="../js/messages.js"></script>
     </body>
 </html>

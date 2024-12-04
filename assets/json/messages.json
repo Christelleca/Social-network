@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "user": {
+            "name": "Marc Thomas",
+            "profilePicture": "assets/images/profiles/profile-picture-1.jpg"
+        },
+        "messages": [
+            {
+                "user": "Marc Thomas",
+                "text": "Hey, how are you today?",
+                "timestamp": "2024-12-03T09:00:00Z"
+            },
+            {
+                "user": "Jane Smith",
+                "text": "I'm doing great, thanks! How about you?",
+                "timestamp": "2024-12-03T09:05:00Z"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "user": {
+            "name": "Alice Blue",
+            "profilePicture": "assets/images/profiles/profile-picture-2.jpg"
+        },
+        "messages": [
+            {
+                "user": "Alice Blue",
+                "text": "What do you think about the project proposal?",
+                "timestamp": "2024-12-03T09:30:00Z"
+            },
+            {
+                "user": "Jane Karl",
+                "text": "I think it's a great idea!",
+                "timestamp": "2024-12-03T09:35:00Z"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "user": {
+            "name": "Mike Roger",
+            "profilePicture": "assets/images/profiles/profile-picture-3.jpg"
+        },
+        "messages": [
+            {
+                "user": "Mike Roger",
+                "text": "Let's catch up this weekend!",
+                "timestamp": "2024-12-03T09:45:00Z"
+            },
+            {
+                "user": "Lara Croft",
+                "text": "Absolutely, I'm looking forward to it!",
+                "timestamp": "2024-12-03T09:50:00Z"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "user": {
+            "name": "Alex Johnson",
+            "profilePicture": "assets/images/profiles/profile-picture-4.jpg"
+        },
+        "messages": [
+            {
+                "user": "Alex Johnson",
+                "text": "Any updates on the code review?",
+                "timestamp": "2024-12-03T10:00:00Z"
+            },
+            {
+                "user": "Mickael Jordan",
+                "text": "Not yet, I'm still going through it.",
+                "timestamp": "2024-12-03T10:05:00Z"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "user": {
+            "name": "Sarah Lee",
+            "profilePicture": "assets/images/profiles/profile-picture-5.jpg"
+        },
+        "messages": [
+            {
+                "user": "Sarah Lee",
+                "text": "Have you planned your trip yet?",
+                "timestamp": "2024-12-03T10:15:00Z"
+            },
+            {
+                "user": "Gabriel Spencer",
+                "text": "Still figuring out the details.",
+                "timestamp": "2024-12-03T10:20:00Z"
+            }
+        ]
+    }
+]

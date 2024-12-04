@@ -18,17 +18,14 @@
             {
                 "id": 101,
                 "user": "Jane Smith",
-                "text": "Great post!",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "Great post!"
             },
             {
                 "id": 101,
                 "user": "Lara Croft",
-                "text": "Nice view",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "Nice view"
             }
-        ],
-        "timestamp": "2024-12-02T15:30:00Z"
+        ]
     },
     {
         "id": 2,
@@ -49,17 +46,14 @@
             {
                 "id": 101,
                 "user": "Jane Karl",
-                "text": "Hope to see you next week :) ",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "Hope to see you next week :) "
             },
             {
                 "id": 101,
                 "user": "Marta Hopper",
-                "text": "Send the adress please",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "Send the adress please"
             }
-        ],
-        "timestamp": "2024-12-02T18:45:00Z"
+        ]
     },
     {
         "id": 3,
@@ -76,8 +70,7 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
-        "timestamp": "2024-12-02T18:45:00Z"
+        "comments": []
     },
     {
         "id": 4,
@@ -98,17 +91,14 @@
             {
                 "id": 101,
                 "user": "Mickael Jordan",
-                "text": "why you never send invitation to travel?",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "why you never send invitation to travel?"
             },
             {
                 "id": 101,
                 "user": "Bob Dylan",
-                "text": "You are blocked",
-                "timestamp": "2024-12-03T10:00:00Z"
+                "text": "You are blocked"
             }
-        ],
-        "timestamp": "2024-12-02T18:45:00Z"
+        ]
     },
     {
         "id": 5,
@@ -125,8 +115,7 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
-        "timestamp": "2024-12-02T18:45:00Z"
+        "comments": []
     },
     {
         "id": 6,
@@ -143,8 +132,7 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
-        "timestamp": "2024-12-02T18:45:00Z"
+        "comments": []
     },
     {
         "id": 7,
@@ -161,8 +149,7 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
-        "timestamp": "2024-12-02T18:45:00Z"
+        "comments": []
     },
     {
         "id": 8,
@@ -179,7 +166,6 @@
             "dislike": 2,
             "love": 5
         },
-        "comments": [],
-        "timestamp": "2024-12-02T18:45:00Z"
+        "comments": []
     }
 ]

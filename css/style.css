@@ -18,6 +18,8 @@ a {
 /* Set the body background color to a darker shade for contrast. */
 body {
     background: var(--primary-shadow-dark);
+    margin: 0;
+    height: 100%;
 }
 
 /******* COLORS *******/
@@ -338,6 +340,10 @@ main {
     box-shadow: inset 4px 4px 8px var(--primary-bg),
         inset -4px -4px 8px var(--primary-shadow-light);
     margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    position: relative;
+    top: 159px;
 }
 
 /* Footer content alignment and font size. */
@@ -491,4 +497,43 @@ main {
     #message-input {
         width: 70%;
     }
+}
+
+/* General styles for the friends container */
+.friends-container {
+    margin: 30px;
+    padding: 30px;
+    width: 450px;
+    background: var(--primary-shadow-light);
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px var(--primary-shadow-light);
+}
+
+/* Styling for each friend's box */
+.friend {
+    display: flex;
+    align-items: center; /* Align the photo and name horizontally */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between each friend */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Set a max-width for the rectangle */
+    width: 100%;
+}
+
+/* Styling for the profile images */
+.friend img {
+    width: 60px; /* Set the size of the profile image */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px; /* Space between the image and the name */
+}
+
+/* Styling for the friend's name */
+.friend p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
 }

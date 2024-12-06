@@ -2,18 +2,17 @@
     {
         "id": 1,
         "user": {
-            "name": "Marc Thomas",
-            "profilePicture": "assets/images/profiles/profile-picture-1.jpg"
+            "name": "Marc Thomas"
         },
         "messages": [
             {
-                "user": "Marc Thomas",
-                "text": "Hey, how are you today?",
+                "sender": "Marc Thomas",
+                "content": "Hey, how are you today?",
                 "timestamp": "2024-12-03T09:00:00Z"
             },
             {
-                "user": "Jane Smith",
-                "text": "I'm doing great, thanks! How about you?",
+                "sender": "Marc Thomas",
+                "content": "I'm doing great, thanks! How about you?",
                 "timestamp": "2024-12-03T09:05:00Z"
             }
         ]
@@ -21,18 +20,17 @@
     {
         "id": 2,
         "user": {
-            "name": "Alice Blue",
-            "profilePicture": "assets/images/profiles/profile-picture-2.jpg"
+            "name": "Alice Blue"
         },
         "messages": [
             {
-                "user": "Alice Blue",
-                "text": "What do you think about the project proposal?",
+                "sender": "Alice Blue",
+                "content": "What do you think about the project proposal?",
                 "timestamp": "2024-12-03T09:30:00Z"
             },
             {
-                "user": "Jane Karl",
-                "text": "I think it's a great idea!",
+                "sender": "Alice Blue",
+                "content": "I think it's a great idea!",
                 "timestamp": "2024-12-03T09:35:00Z"
             }
         ]
@@ -40,18 +38,17 @@
     {
         "id": 3,
         "user": {
-            "name": "Mike Roger",
-            "profilePicture": "assets/images/profiles/profile-picture-3.jpg"
+            "name": "Mike Roger"
         },
         "messages": [
             {
-                "user": "Mike Roger",
-                "text": "Let's catch up this weekend!",
+                "sender": "Mike Roger",
+                "content": "Let's catch up this weekend!",
                 "timestamp": "2024-12-03T09:45:00Z"
             },
             {
-                "user": "Lara Croft",
-                "text": "Absolutely, I'm looking forward to it!",
+                "sender": "Mike Roger",
+                "content": "Absolutely, I'm looking forward to it!",
                 "timestamp": "2024-12-03T09:50:00Z"
             }
         ]
@@ -59,18 +56,17 @@
     {
         "id": 4,
         "user": {
-            "name": "Alex Johnson",
-            "profilePicture": "assets/images/profiles/profile-picture-4.jpg"
+            "name": "Alex Johnson"
         },
         "messages": [
             {
-                "user": "Alex Johnson",
-                "text": "Any updates on the code review?",
+                "sender": "Alex Johnson",
+                "content": "Any updates on the code review?",
                 "timestamp": "2024-12-03T10:00:00Z"
             },
             {
-                "user": "Mickael Jordan",
-                "text": "Not yet, I'm still going through it.",
+                "sender": "Alex Johnson",
+                "content": "Not yet, I'm still going through it.",
                 "timestamp": "2024-12-03T10:05:00Z"
             }
         ]
@@ -78,18 +74,17 @@
     {
         "id": 5,
         "user": {
-            "name": "Sarah Lee",
-            "profilePicture": "assets/images/profiles/profile-picture-5.jpg"
+            "name": "Sarah Lee"
         },
         "messages": [
             {
-                "user": "Sarah Lee",
-                "text": "Have you planned your trip yet?",
+                "sender": "Sarah Lee",
+                "content": "Have you planned your trip yet?",
                 "timestamp": "2024-12-03T10:15:00Z"
             },
             {
-                "user": "Gabriel Spencer",
-                "text": "Still figuring out the details.",
+                "sender": "Sarah Lee",
+                "content": "Still figuring out the details.",
                 "timestamp": "2024-12-03T10:20:00Z"
             }
         ]

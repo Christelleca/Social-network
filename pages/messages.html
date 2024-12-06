@@ -54,7 +54,33 @@
         </header>
 
         <!---- MAIN ---->
-        <main></main>
+        <main>
+            <div class="main-content">
+                <!-- Conversations List -->
+                <div class="conversations-list">
+                    <h2>Conversations</h2>
+                    <div id="conversations">
+                        <!-- Dynamic list of conversations will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Chat Window -->
+                <div class="chat-window">
+                    <h2>Chat</h2>
+                    <div id="chat-messages">
+                        <!-- Dynamic chat messages will be loaded here -->
+                    </div>
+                    <div class="message-input">
+                        <input
+                            type="text"
+                            id="message-input"
+                            placeholder="Type a message..."
+                        />
+                        <button id="send-message">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
         <!---- FOOTER ---->
 
         <footer class="footer">

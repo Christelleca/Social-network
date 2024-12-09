@@ -342,7 +342,6 @@ main {
     margin-top: 20px;
     position: relative;
     bottom: 0;
-    position: relative;
     top: 159px;
 }
 
@@ -512,23 +511,33 @@ main {
 /* Styling for each friend's box */
 .friend {
     display: flex;
-    align-items: center; /* Align the photo and name horizontally */
+    align-items: center;
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px; /* Space between each friend */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Set a max-width for the rectangle */
+    max-width: 600px;
     width: 100%;
+    cursor: grab;
+    transition: background-color 0.3s ease;
+}
+
+.friend:hover {
+    background-color: #ddd;
 }
 
 /* Styling for the profile images */
 .friend img {
-    width: 60px; /* Set the size of the profile image */
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px; /* Space between the image and the name */
+}
+
+.friend a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
 /* Styling for the friend's name */

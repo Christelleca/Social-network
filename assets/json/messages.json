@@ -2,7 +2,8 @@
     {
         "id": 1,
         "user": {
-            "name": "Marc Thomas"
+            "firstName": "Marc",
+            "lastName": "Thomas"
         },
         "messages": [
             {
@@ -20,7 +21,8 @@
     {
         "id": 2,
         "user": {
-            "name": "Alice Blue"
+            "firstName": "Alice",
+            "lastName": "Blue"
         },
         "messages": [
             {
@@ -38,7 +40,8 @@
     {
         "id": 3,
         "user": {
-            "name": "Mike Roger"
+            "firstName": "Mike",
+            "lastName": "Roger"
         },
         "messages": [
             {
@@ -56,7 +59,8 @@
     {
         "id": 4,
         "user": {
-            "name": "Alex Johnson"
+            "firstName": "Alex",
+            "lastName": "Johnson"
         },
         "messages": [
             {
@@ -74,7 +78,8 @@
     {
         "id": 5,
         "user": {
-            "name": "Sarah Lee"
+            "firstName": "Sarah",
+            "lastName": "Lee"
         },
         "messages": [
             {

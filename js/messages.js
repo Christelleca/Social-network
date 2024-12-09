@@ -8,12 +8,41 @@ const sendMessageButton = document.getElementById('send-message');
 let conversations = [];
 let activeConversation = null;
 
-// Load JSON data (mock localStorage first load)
+// Retrieve the selected friend from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const friendKey = urlParams.get('friend');
+
+// Find the corresponding conversation and display it
+if (friendKey) {
+    const [firstName, lastName] = friendKey.split('_');
+    activeConversation = conversations.find(
+        (conv) =>
+            conv.user.firstName === firstName && conv.user.lastName === lastName
+    );
+    if (activeConversation) {
+        displayMessages(); // Display the messages of this conversation
+    } else {
+        console.log('No messages found for this friend.');
+    }
+}
+
+// Retrieve URL parameters
+function getQueryParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(param);
+}
+
+// Load conversations from JSON or localStorage
 function loadConversations() {
     const storedData = localStorage.getItem('conversations');
     if (storedData) {
         conversations = JSON.parse(storedData);
-        populateConversations();
+        const friendKey = getQueryParam('friend');
+        if (friendKey) {
+            setActiveConversation(friendKey);
+        } else {
+            populateConversations();
+        }
     } else {
         fetch('../assets/json/messages.json')
             .then((response) => {
@@ -24,7 +53,12 @@ function loadConversations() {
             })
             .then((data) => {
                 conversations = data;
-                populateConversations();
+                const friendKey = getQueryParam('friend');
+                if (friendKey) {
+                    setActiveConversation(friendKey);
+                } else {
+                    populateConversations();
+                }
             })
             .catch((error) => {
                 console.error('Error loading JSON:', error);
@@ -32,42 +66,65 @@ function loadConversations() {
     }
 }
 
+// Set the active conversation based on a friend identifier
+function setActiveConversation(friendKey) {
+    const [firstName, lastName] = friendKey.split('_');
+    activeConversation = conversations.find(
+        (conversation) =>
+            conversation.user.firstName === firstName &&
+            conversation.user.lastName === lastName
+    );
+
+    if (activeConversation) {
+        displayMessages();
+    } else {
+        chatMessages.innerHTML = '<p>No messages found for this friend.</p>';
+    }
+}
+
 // Populate the conversation list
 function populateConversations() {
-    conversationList.innerHTML = '';
-    conversations.forEach((conversation) => {
-        // Retrieve the last message from the conversation
+    conversationList.innerHTML = ''; // Reset the conversation list
+    conversations.forEach((conversation, index) => {
         const lastMessageObj =
             conversation.messages[conversation.messages.length - 1];
-
-        // Define lastMessage
         const lastMessage = lastMessageObj
-            ? `${
-                  lastMessageObj.sender ||
-                  lastMessageObj.user ||
-                  'Unknown Sender'
-              }: ${
-                  lastMessageObj.content || lastMessageObj.text || 'No Content'
+            ? `${lastMessageObj.sender || 'Unknown Sender'}: ${
+                  lastMessageObj.content || 'No Content'
               }`
             : 'No messages yet';
 
-        // Create a new conversation element
         const conversationElement = document.createElement('div');
         conversationElement.classList.add('conversation');
+        conversationElement.dataset.index = index; // Index for quick reference
+
+        // Add data-friend with a unique key for each user
+        conversationElement.dataset.friend = `${conversation.user.firstName}_${conversation.user.lastName}`;
+
         conversationElement.innerHTML = `
             <div>
-                <p>${conversation.user.name}</p>
+                <p class="friend-name">${conversation.user.firstName} ${conversation.user.lastName}</p>
                 <p>${lastMessage}</p>
             </div>
         `;
 
-        // Add click event to open the conversation
+        // Add a click event to activate the conversation
         conversationElement.addEventListener('click', () => {
             activeConversation = conversation;
+
+            // Update the URL to include the friend parameter
+            const friendKey = conversationElement.dataset.friend;
+            if (friendKey) {
+                const newUrl = `${
+                    window.location.pathname
+                }?friend=${encodeURIComponent(friendKey)}`;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+            }
+
             displayMessages();
         });
 
-        // Append the new conversation element to the list
+        // Add the element to the conversation list
         conversationList.appendChild(conversationElement);
     });
 }
@@ -78,8 +135,8 @@ function displayMessages() {
 
     chatMessages.innerHTML = ''; // Clear current messages
     activeConversation.messages.forEach((message) => {
-        const sender = message.sender || message.user || 'Unknown Sender';
-        const content = message.content || message.text || 'No Content';
+        const sender = message.sender || 'Unknown Sender';
+        const content = message.content || 'No Content';
 
         const messageElement = document.createElement('div');
         messageElement.classList.add('message');
@@ -104,41 +161,15 @@ sendMessageButton.addEventListener('click', () => {
         timestamp: new Date().toISOString(),
     };
 
-    // Add to the current conversation
     activeConversation.messages.push(newMessage);
-
-    // Update lastMessage for the active conversation
-    activeConversation.lastMessage = newMessage.content;
 
     // Update UI
     displayMessages();
-
-    // Update the conversation list to reflect the new last message
     populateConversations();
-    // Clear input field
     messageInput.value = '';
 
-    // Save updated data to localStorage
     localStorage.setItem('conversations', JSON.stringify(conversations));
 });
 
-// Update the conversation list dynamically
-function updateConversationList() {
-    const activeIndex = conversations.indexOf(activeConversation);
-    if (activeIndex >= 0) {
-        const conversationElement = conversationList.querySelector(
-            `[data-index="${activeIndex}"]`
-        );
-        if (conversationElement) {
-            const lastMessage =
-                activeConversation.messages[
-                    activeConversation.messages.length - 1
-                ];
-            conversationElement.querySelector('p:nth-child(2)').textContent =
-                lastMessage.content;
-        }
-    }
-}
-
-// Initial load
+// Load initial data
 loadConversations();

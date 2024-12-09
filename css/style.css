@@ -1,5 +1,5 @@
 /****** GENERAL ******/
-/* Apply a consistent font, remove default margins and paddings, 
+/* Apply a consistent font, remove default margins and paddings,
    and use box-sizing for better control of element sizing. */
 * {
     font-family: 'Poppins', serif;
@@ -486,28 +486,45 @@ main {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
+    .log {
+        font-size: small;
     }
-
+    .main-feed {
+        flex-direction: column-reverse;
+    }
+    .search-bar {
+        display: none;
+    }
     .main-content {
         flex-direction: column;
         margin-left: 0;
     }
+    .sidebar {
+        width: auto;
+        height: auto;
+    }
+    .sidebar-buttons {
+        flex-direction: unset;
+        justify-content: center;
+    }
 
     .conversations-list {
         width: 100%;
-        height: 200px;
         overflow-y: auto;
     }
 
     .chat-window {
-        margin-top: 20px;
-        width: 100%;
+        margin: 20px 0;
     }
 
     #message-input {
         width: 70%;
+    }
+}
+
+@media (max-width: 375px) {
+    .comment-form input {
+        width: 165px;
     }
 }
 

@@ -3,7 +3,8 @@
         "id": 1,
         "user": {
             "firstName": "Marc",
-            "lastName": "Thomas"
+            "lastName": "Thomas",
+            "profilePicture": "profile-picture-1.jpg"
         },
         "messages": [
             {
@@ -22,7 +23,8 @@
         "id": 2,
         "user": {
             "firstName": "Alice",
-            "lastName": "Blue"
+            "lastName": "Blue",
+            "profilePicture": "profile-picture-2.jpg"
         },
         "messages": [
             {
@@ -41,7 +43,8 @@
         "id": 3,
         "user": {
             "firstName": "Mike",
-            "lastName": "Roger"
+            "lastName": "Roger",
+            "profilePicture": "profile-picture-3.jpg"
         },
         "messages": [
             {
@@ -60,7 +63,8 @@
         "id": 4,
         "user": {
             "firstName": "Alex",
-            "lastName": "Johnson"
+            "lastName": "Johnson",
+            "profilePicture": "profile-picture-4.jpg"
         },
         "messages": [
             {
@@ -79,7 +83,8 @@
         "id": 5,
         "user": {
             "firstName": "Sarah",
-            "lastName": "Lee"
+            "lastName": "Lee",
+            "profilePicture": "profile-picture-5.jpg"
         },
         "messages": [
             {

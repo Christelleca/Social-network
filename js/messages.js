@@ -12,58 +12,48 @@ let activeConversation = null;
 const urlParams = new URLSearchParams(window.location.search);
 const friendKey = urlParams.get('friend');
 
-// Find the corresponding conversation and display it
-if (friendKey) {
-    const [firstName, lastName] = friendKey.split('_');
-    activeConversation = conversations.find(
-        (conv) =>
-            conv.user.firstName === firstName && conv.user.lastName === lastName
-    );
-    if (activeConversation) {
-        displayMessages(); // Display the messages of this conversation
-    } else {
-        console.log('No messages found for this friend.');
-    }
-}
-
-// Retrieve URL parameters
-function getQueryParam(param) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(param);
-}
-
 // Load conversations from JSON or localStorage
 function loadConversations() {
     const storedData = localStorage.getItem('conversations');
     if (storedData) {
-        conversations = JSON.parse(storedData);
-        const friendKey = getQueryParam('friend');
-        if (friendKey) {
-            setActiveConversation(friendKey);
-        } else {
+        try {
+            conversations = JSON.parse(storedData);
+            if (!Array.isArray(conversations)) {
+                throw new Error('Stored data is not an array');
+            }
             populateConversations();
+            if (friendKey) {
+                setActiveConversation(friendKey);
+            }
+        } catch (error) {
+            console.error('Error parsing stored data:', error);
+            localStorage.removeItem('conversations'); // Clean corrupted data
+            fetchConversationsFromJSON();
         }
     } else {
-        fetch('../assets/json/messages.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to load messages.json');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                conversations = data;
-                const friendKey = getQueryParam('friend');
-                if (friendKey) {
-                    setActiveConversation(friendKey);
-                } else {
-                    populateConversations();
-                }
-            })
-            .catch((error) => {
-                console.error('Error loading JSON:', error);
-            });
+        fetchConversationsFromJSON();
     }
+}
+
+// Fetch conversations from JSON
+function fetchConversationsFromJSON() {
+    fetch('../assets/json/messages.json')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Failed to load messages.json');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            conversations = data;
+            populateConversations();
+            if (friendKey) {
+                setActiveConversation(friendKey);
+            }
+        })
+        .catch((error) => {
+            console.error('Error loading JSON:', error);
+        });
 }
 
 // Set the active conversation based on a friend identifier
@@ -77,9 +67,22 @@ function setActiveConversation(friendKey) {
 
     if (activeConversation) {
         displayMessages();
+        highlightActiveConversation(friendKey);
     } else {
         chatMessages.innerHTML = '<p>No messages found for this friend.</p>';
     }
+}
+
+// Highlight the active conversation
+function highlightActiveConversation(friendKey) {
+    const conversationElements = document.querySelectorAll('.conversation');
+    conversationElements.forEach((element) => {
+        if (element.dataset.friend === friendKey) {
+            element.classList.add('active');
+        } else {
+            element.classList.remove('active');
+        }
+    });
 }
 
 // Populate the conversation list
@@ -101,9 +104,13 @@ function populateConversations() {
         // Add data-friend with a unique key for each user
         conversationElement.dataset.friend = `${conversation.user.firstName}_${conversation.user.lastName}`;
 
+        // Use the profile picture from the JSON
+        const profilePictureSrc = `../assets/images/profiles/${conversation.user.profilePicture}`;
+
         conversationElement.innerHTML = `
             <div>
-                <p class="friend-name">${conversation.user.firstName} ${conversation.user.lastName}</p>
+                <img src="${profilePictureSrc}" alt="${conversation.user.firstName} ${conversation.user.lastName}" class="profile-picture">
+                <p class="friend-name"><strong>${conversation.user.firstName} ${conversation.user.lastName}</strong></p>
                 <p>${lastMessage}</p>
             </div>
         `;
@@ -122,6 +129,7 @@ function populateConversations() {
             }
 
             displayMessages();
+            highlightActiveConversation(friendKey);
         });
 
         // Add the element to the conversation list

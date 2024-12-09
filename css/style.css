@@ -395,12 +395,25 @@ main {
     cursor: pointer;
 }
 
+.conversation.active {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
 .conversation p {
     margin: 0;
 }
 
 .conversation p:first-child {
     font-weight: bold;
+}
+
+.friend-name {
+    margin: 0 10px;
+}
+
+.message {
+    margin-bottom: 10px;
 }
 
 /* Chat Window */
